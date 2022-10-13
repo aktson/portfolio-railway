@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosos",
+  "info": {
+    "singularName": "noso",
+    "pluralName": "nosos",
+    "displayName": "noso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "image_alttext": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "men",
+        "women",
+        "children"
+      ]
+    }
+  }
+}

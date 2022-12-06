@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project"
+    "displayName": "project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,46 +22,58 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "summary": {
       "type": "richtext"
     },
     "stacks": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "github": {
       "type": "string"
     },
     "sliderImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "inversedBy": "projects"
+      "mappedBy": "projects"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "javascript",
+        "react",
+        "next",
+        "typescript"
+      ]
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "skills"
+    "displayName": "skills",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,21 +22,22 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "category": {
       "type": "enumeration",
       "enum": [
         "design",
-        "frontend",
-        "other"
+        "frammework",
+        "cms"
       ]
     }
   }

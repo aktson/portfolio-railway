@@ -74,6 +74,9 @@
         "next",
         "typescript"
       ]
+    },
+    "summaryEnglish": {
+      "type": "richtext"
     }
   }
 }

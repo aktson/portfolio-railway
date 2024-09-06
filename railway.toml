@@ -1,4 +1,0 @@
-providers = ["node", "python"]
-
-[start]
-cmd = "echo Node $(node -v) && python3 --version"

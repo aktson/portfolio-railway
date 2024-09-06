@@ -1,54 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "$schema": {
-      "type": "string"
-    },
-    "build": {
-      "type": "object",
-      "properties": {
-        "builder": {
-          "type": "string",
-          "enum": ["NIXPACKS"],
-          "description": "Set the builder for the deployment"
-        },
-        "buildCommand": {
-          "type": "string",
-          "description": "Build command to pass to the Nixpacks builder",
-          "default": "nix-env -iA nixpkgs.nodejs-14 && nix-env -iA nixpkgs.python3_10 && npm install && npm run build"
-        },
-        "nixpacksConfigPath": {
-          "type": "string",
-          "description": "Location of a non-standard Nixpacks config file",
-          "default": ".nixpacks"
-        }
-      },
-      "additionalProperties": false,
-      "description": "Configuration for the build step"
-    },
-    "deploy": {
-      "type": "object",
-      "properties": {
-        "startCommand": {
-          "type": "string",
-          "description": "The command to run when starting the container",
-          "default": "nix-env -iA nixpkgs.python3_10 && npm start"
-        },
-        "healthcheckPath": {
-          "type": "string",
-          "description": "Path to check after starting your deployment to ensure it is healthy",
-          "default": "/"
-        },
-        "healthcheckTimeout": {
-          "type": "number",
-          "description": "Number of seconds to wait for the healthcheck path to become healthy",
-          "default": 100
-        }
-      },
-      "additionalProperties": false,
-      "description": "Configuration for the deploy step"
-    }
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "nix-env -iA nixpkgs.nodejs-14 && nix-env -iA nixpkgs.python3_10 && npm install && npm run build"
   },
-  "additionalProperties": false
+  "deploy": {
+    "startCommand": "nix-env -iA nixpkgs.python3_10 && npm start",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100,
+    "restartPolicyType": "never"
+  }
 }

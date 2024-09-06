@@ -1,8 +1,9 @@
+
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "nix-env -iA nixpkgs.python39 nixpkgs.nodejs-14_x && pip install -r requirements.txt && npm install --verbose && npm run build --verbose",
+    "buildCommand": "pip install -r requirements.txt && npm install --verbose && npm run build --verbose",
     "nixpacksVersion": "1.13.0"
   },
   "deploy": {
